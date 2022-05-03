@@ -112,12 +112,19 @@ h3.heading-title {
 .header-container nav.header-navigation ul li {
     list-style: none;
     color: var(--white);
-    padding: 1rem 0.5rem;
+    padding: 1rem 0;
     cursor: pointer;
 }
 
 .header-container nav.header-navigation ul li a {
     color: var(--white);
+    padding: 1.25rem 0.5rem;
+}
+
+.header-container nav.header-navigation ul li a.active {
+    background-color: var(--accent2);
+    color: black;
+    font-weight: bold;
 }
 
 .home-container {
@@ -142,6 +149,12 @@ h3.heading-title {
     top: 0;
     left: 0;
     text-align: left;
+}
+
+.home-container .image-banner .banner-spotlight h2,
+.home-container .image-banner .banner-spotlight p {
+    color: var(--accent2);
+    font-weight: bold;
 }
 
 .home-container .image-banner button {
