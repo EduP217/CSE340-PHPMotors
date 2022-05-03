@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda&family=Share+Tech+Mono&family=Share:wght@700&family=Titillium+Web&display=swap');
+
+:root {
+    --primary: #bababa;
+    --secondary: #8d8d8d;
+    --accent: #a6cbeb;
+    --accent2: #4c96d7;
+    --border: #3a3a3a;
+    --white: #fff;
+
+    --heading-font: 'Share', cursive;
+    --paragraph-font: 'Titillium Web', sans-serif;
+    --accent-font: 'Share Tech Mono', monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/site/checkerboard.jpg');
+    background-size: 30%;
+    background-repeat: repeat;
+    background-position: center center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+main,
+footer {
+    background-color: white;
+}
+
+footer {
+    border-top: 3px solid var(--border);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+}
+
+p,
+li {
+    font-family: var(--paragraph-font);
+}
+
+a,
+button {
+    text-decoration: none;
+    font-family: var(--accent-font);
+    color: var(--border);
+}
+
+button {
+    background-color: var(--accent2);
+    border-color: var(--border);
+}
+
+h1.heading-title,
+h2.heading-title,
+h3.heading-title {
+    padding: 1rem 0;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+}
+
+.header-container img.header-logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: self-start;
+    border-radius: 9px;
+}
+
+.header-container a.header-signin {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: self-end;
+    padding: 1.5rem 3rem 0 0;
+}
+
+.header-container nav.header-navigation {
+    grid-column: 1/-1;
+    grid-row: 2;
+    background-color: var(--border);
+}
+
+.header-container nav.header-navigation ul {
+    display: flex;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container nav.header-navigation ul li {
+    list-style: none;
+    color: var(--white);
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+}
+
+.header-container nav.header-navigation ul li a {
+    color: var(--white);
+}
+
+.home-container {
+    padding: 0 0.5rem;
+}
+
+.home-container .image-banner {
+    position: relative;
+    text-align: center;
+}
+
+.home-container .image-banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.home-container .image-banner .banner-spotlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+}
+
+.home-container .image-banner button {
+    padding: 0.5rem 1rem;
+    font-size: 1.75em;
+}
+
+.home-container .car-details {
+    display: block;
+}
+
+.home-container .car-details .upgrades .grid-upgrades-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    justify-content: space-around;
+    padding: 1rem 0;
+    padding-top: 0;
+}
+
+.upgrades .grid-upgrades-container .grid-upgrade-item {
+    text-align: center;
+    flex-basis: 48%;
+}
+
+.upgrades .grid-upgrades-container .grid-upgrade-item .image-icon {
+    background-color: var(--accent2);
+    height: 60px;
+    padding: 0.25rem 0;
+}
+
+.upgrades .grid-upgrades-container .grid-upgrade-item .image-icon img {
+    height: 100%;
+}
+
+.home-container .car-details .reviews ul {
+    margin: 1rem 0;
+    margin-top: 0;
+}
+
+.home-container .car-details .reviews ul li {
+    line-height: 1.75;
+}
+
+footer .footer-container {
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
+    text-align: center;
+}

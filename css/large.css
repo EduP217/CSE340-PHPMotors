@@ -1,0 +1,83 @@
+@media(min-width: 769px) {
+    body {
+        padding: 1rem 3rem;
+    }
+
+    header,
+    main,
+    footer {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    header {
+        border: 3px solid var(--accent2);
+        border-bottom: none;
+        border-radius: 9px 9px 0 0;
+    }
+
+    main {
+        border-left: 3px solid var(--accent2);
+        border-right: 3px solid var(--accent2);
+    }
+
+    footer {
+        border: 3px solid var(--accent2);
+        border-top-color: var(--border);
+        border-radius: 0 0 9px 9px;
+    }
+
+    .header-container img.header-logo {
+        height: 60px;
+    }
+
+    .header-container nav.header-navigation {
+        padding-left: 1rem;
+    }
+
+    .header-container nav.header-navigation ul {
+        gap: 1rem;
+    }
+
+    .home-container {
+        padding: 0 1rem;
+    }
+
+    .home-container .image-banner button {
+        position: absolute;
+        top: 8rem;
+        left: 2rem;
+        padding: 0.5rem 1rem;
+        font-size: 1.25em;
+    }
+
+    .home-container .image-banner .banner-spotlight {
+        top: 1rem;
+        left: 2rem;
+    }
+
+    .home-container .car-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 4rem;
+        padding: 1rem;
+    }
+
+    .home-container .car-details .upgrades {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .home-container .car-details .reviews {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .home-container .car-details .upgrades .grid-upgrades-container {
+        padding-top: 1rem;
+    }
+
+    .home-container .car-details .reviews ul {
+        margin-top: 1rem;
+    }
+}
