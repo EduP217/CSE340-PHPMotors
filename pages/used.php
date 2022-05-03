@@ -8,9 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Used - PHP Motors</title>
 
-    <link rel="stylesheet" href="<?php echo $host ?>css/normalize.css">
-    <link rel="stylesheet" href="<?php echo $host ?>css/style.css" media="screen">
-    <link rel="stylesheet" href="<?php echo $host ?>css/large.css" media="screen">
+    <link rel="stylesheet" href="<?php echo $host ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo $host ?>css/large.css">
 </head>
 
 <body>
