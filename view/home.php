@@ -1,4 +1,4 @@
-<?php $host = '/CSE340/CSE340-PHPMotors/'; $page = 'home'; ?>
+<?php $page = 'home'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - PHP Motors</title>
 
-    <link rel="stylesheet" href="<?php echo $host ?>css/style.css" media="screen">
-    <link rel="stylesheet" href="<?php echo $host ?>css/large.css" media="screen">
+    <link rel="stylesheet" href="/css/style.css" media="screen">
+    <link rel="stylesheet" href="/css/large.css" media="screen">
 </head>
 
 <body>
     <header>
-        <?php include 'layout/header.php'; ?>
+        <?php include 'snippets/header.php'; ?>
     </header>
     <main>
         <div class="home-container">
             <h1 class="heading-title">Welcome to PHP Motors!</h1>
             <div class="image-banner">
-                <img src="<?php echo $host ?>images/delorean.jpg" alt="banner">
+                <img src="/images/delorean.jpg" alt="banner">
                 <div class="banner-spotlight">
                     <h2>DMC Delorean</h2>
                     <p>
@@ -47,25 +47,25 @@
                     <div class="grid-upgrades-container">
                         <div class="grid-upgrade-item">
                             <div class="image-icon">
-                                <img src="<?php echo $host ?>images/upgrades/flux-cap.png" alt="flux cap">
+                                <img src="/images/upgrades/flux-cap.png" alt="flux cap">
                             </div>
                             <a href="#">Flux Capacitor</a>
                         </div>
                         <div class="grid-upgrade-item">
                             <div class="image-icon">
-                                <img src="<?php echo $host ?>images/upgrades/flame.jpg" alt="flame">
+                                <img src="/images/upgrades/flame.jpg" alt="flame">
                             </div>
                             <a href="#">Flame Decals</a>
                         </div>
                         <div class="grid-upgrade-item">
                             <div class="image-icon">
-                                <img src="<?php echo $host ?>images/upgrades/bumper_sticker.jpg" alt="bumper">
+                                <img src="/images/upgrades/bumper_sticker.jpg" alt="bumper">
                             </div>
                             <a href="#">Bumper Stickers</a>
                         </div>
                         <div class="grid-upgrade-item">
                             <div class="image-icon">
-                                <img src="<?php echo $host ?>images/upgrades/hub-cap.jpg" alt="hub">
+                                <img src="/images/upgrades/hub-cap.jpg" alt="hub">
                             </div>
                             <a href="#">Hub Caps</a>
                         </div>
@@ -75,11 +75,11 @@
         </div>
     </main>
     <footer>
-        <?php include 'layout/footer.php'; ?>
+        <?php include 'snippets/footer.php'; ?>
     </footer>
 
-    <script src="<?php echo $host ?>js/utils.js"></script>
-    <script src="<?php echo $host ?>js/script.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

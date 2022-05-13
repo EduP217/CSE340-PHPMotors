@@ -1,4 +1,4 @@
-<?php $host = '/CSE340/CSE340-PHPMotors/'; $page = 'suv'; ?>
+<?php $page = 'suv'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUV - PHP Motors</title>
 
-    <link rel="stylesheet" href="<?php echo $host ?>css/style.css" media="screen">
-    <link rel="stylesheet" href="<?php echo $host ?>css/large.css" media="screen">
+    <link rel="stylesheet" href="/css/style.css" media="screen">
+    <link rel="stylesheet" href="/css/large.css" media="screen">
 </head>
 
 <body>
     <header>
-        <?php include '../layout/header.php'; ?>
+        <?php include 'snippets/header.php'; ?>
     </header>
     <main>
         <div class="suv-container">
@@ -22,11 +22,11 @@
         </div>
     </main>
     <footer>
-        <?php include '../layout/footer.php'; ?>
+        <?php include 'snippets/footer.php'; ?>
     </footer>
 
-    <script src="<?php echo $host ?>js/utils.js"></script>
-    <script src="<?php echo $host ?>js/script.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
