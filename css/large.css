@@ -28,14 +28,21 @@
     }
 
     .header-container img.header-logo {
-        height: 60px;
     }
 
-    .header-container nav.header-navigation {
+    .header-container a.header-signin {
+        padding: 1rem 2rem 0 0;
+    }
+
+    nav.header-navigation {
         padding-left: 1rem;
+        border-left: 3px solid var(--accent2);
+        border-right: 3px solid var(--accent2);
+        max-width: 980px;
+        margin: 0 auto;
     }
 
-    .header-container nav.header-navigation ul {
+    nav.header-navigation ul {
         gap: 1rem;
     }
 

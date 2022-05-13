@@ -19,7 +19,7 @@ function phpmotorsConnect()
         return $link;
     } catch (PDOException $e) {
         //echo "it didn't worked, error: ". $e->getMessage();
-        header('Location: /CSE340/CSE340-PHPMotors/view/500.php');
+        header('Location: /phpmotors/view/500.php');
         exit;
     }
 }
