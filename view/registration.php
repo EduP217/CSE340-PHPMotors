@@ -21,8 +21,8 @@
     <main>
         <div class="register-container">
             <h1 class="heading-title text-center">REGISTER</h1>
-            <section>
-                <form action="" method="POST">
+            <div>
+                <form action="?action=registration" method="POST">
                     <label for="firstname">First Name</label>
                     <input type="text" id="firstname" name="firstname" required>
                     <label for="lastname">Last Name</label>
@@ -37,7 +37,7 @@
                     <button type="button" title="Show Password" class="show-password">Show Password</button>
                     <button type="submit">Register</button>
                 </form>
-            </section>
+            </div>
         </div>
     </main>
     <footer>

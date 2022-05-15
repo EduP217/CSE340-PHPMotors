@@ -21,18 +21,18 @@
     <main>
         <div class="login-container">
             <h1 class="heading-title text-center">LOGIN</h1>
-            <section>
-                <form action="" method="POST">
+            <div>
+                <form action="?action=login" method="POST">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                     <button type="submit">Sign In</button>
                 </form>
-            </section>
-            <section class="text-right">
+            </div>
+            <div class="text-right">
                 <h3>No account? <a href="?action=registration"><u>Register</u></a></h3>
-            </section>
+            </div>
         </div>
     </main>
     <footer>
