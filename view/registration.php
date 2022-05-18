@@ -21,21 +21,28 @@
     <main>
         <div class="register-container">
             <h1 class="heading-title text-center">REGISTER</h1>
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
             <div>
-                <form action="?action=registration" method="POST">
-                    <label for="firstname">First Name</label>
-                    <input type="text" id="firstname" name="firstname" required>
-                    <label for="lastname">Last Name</label>
-                    <input type="text" id="lastname" name="lastname" required>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                <form method="POST" action="/phpmotors/accounts/index.php">
+                    <label for="clientFirstname">First Name</label>
+                    <input type="text" id="clientFirstname" name="clientFirstname" required>
+                    <label for="clientLastname">Last Name</label>
+                    <input type="text" id="clientLastname" name="clientLastname" required>
+                    <label for="clientEmail">Email</label>
+                    <input type="email" id="clientEmail" name="clientEmail" required>
                     <h5>
                         Password must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character
                     </h5>
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="clientPassword">Password</label>
+                    <input type="password" id="clientPassword" name="clientPassword" required>
                     <button type="button" title="Show Password" class="show-password">Show Password</button>
-                    <button type="submit">Register</button>
+                    <button type="submit" name="submit" id="regbtn">Register</button>
+                    <!-- Add the action name - value pair -->
+                    <input type="hidden" name="action" value="register">
                 </form>
             </div>
         </div>

@@ -21,12 +21,17 @@
     <main>
         <div class="login-container">
             <h1 class="heading-title text-center">LOGIN</h1>
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
             <div>
-                <form action="?action=login" method="POST">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                <form action="/phpmotors/accounts/index.php" method="POST">
+                    <label for="clientEmail">Email</label>
+                    <input type="email" id="clientEmail" name="clientEmail" required>
+                    <label for="clientPassword">Password</label>
+                    <input type="password" id="clientPassword" name="clientPassword" required>
                     <button type="submit">Sign In</button>
                 </form>
             </div>
