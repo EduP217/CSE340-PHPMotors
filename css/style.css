@@ -55,7 +55,8 @@ h6 {
 
 p,
 li,
-label {
+label,
+legend {
     font-family: var(--paragraph-font);
 }
 
@@ -64,16 +65,20 @@ label {
 }
 
 a,
-button {
+button, .button {
     text-decoration: none;
     font-family: var(--accent-font);
     color: var(--border);
 }
 
-button {
+button, .button {
     background-color: var(--accent2);
-    border-color: var(--border);
+    border: 2px solid var(--border);
     cursor: pointer;
+}
+
+textarea, .textarea {
+    resize: none;
 }
 
 h1.heading-title,
@@ -294,4 +299,46 @@ footer .footer-container {
     margin-bottom: 1rem;
     font-weight: bold;
     border: 3px dotted var(--accent2);
+}
+
+.clearfix {
+    clear: both !important;
+}
+
+.add-classification-container, .add-vehicle-container {
+    padding: 0 1rem;
+}
+
+form {
+    width: 100%;
+    max-width: 450px;
+}
+
+fieldset legend {
+    padding: 0.25rem 0.5rem;
+    background-color: var(--accent);
+    font-weight: bold;
+}
+
+.formInput {
+    width: 100%;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+    padding: 0.75rem 0.5rem;
+}
+
+.button {
+    margin: 1rem 0;
+    padding: 1rem 0.5rem;
+    font-weight: bold;
+}
+
+.btn-cancel {
+    background-color: var(--white);
+    float: left;
+}
+
+.btn-submit {
+    background-color: var(--accent);
+    float: right;
 }

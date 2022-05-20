@@ -47,7 +47,7 @@ switch ($action) {
         $clientPassword = filter_input(INPUT_POST, 'clientPassword');
         // Check for missing data
         if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($clientPassword)) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
+            $message = "<p class='alert-message'>Please provide information for all empty form fields.</p>";
             include '../view/registration.php';
             exit;
         }
