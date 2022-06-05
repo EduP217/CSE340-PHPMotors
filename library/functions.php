@@ -15,3 +15,33 @@ function checkEmail($clientEmail){
     $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]\s])(?=.*[A-Z])(?=.*[a-z])(?:.{8,})$/';
     return preg_match($pattern, $clientPassword);
 }
+
+function checkInputMaxLength($input, $maxlength){
+    return strlen(strval($input)) <= $maxlength;
+}
+
+function checkInteger($stock){
+    $valstock = filter_var($stock, FILTER_VALIDATE_INT);
+    return $valstock;
+}
+
+function checkText($color){
+    $pattern = '/^[a-zA-Z ]*$/';
+    return preg_match($pattern, $color);
+}
+
+function buildNavigationList($action, $classifications){    
+    // Build a navigation bar using the $classifications array
+    $activeClass = ($action == null) ? 'active':'';
+    $navList = '<ul>';
+    $navList .= "<li><a href='/phpmotors' class='$activeClass' title='View the PHP Motors home page'>Home</a></li>";
+    foreach ($classifications as $classification) {
+        $classificationNavName = strtolower($classification['classificationName']);
+        $activeClass = ($classificationNavName == $action) ? 'active':'';
+        $navList .= "<li><a href='/phpmotors?action=" . urlencode($classificationNavName) . "' class='$activeClass' title='View our $classificationNavName product line'>$classificationNavName</a></li>";
+    }
+    $navList .= '</ul>';
+    //echo $navList;
+    //exit;
+    return $navList;
+}

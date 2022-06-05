@@ -301,6 +301,15 @@ footer .footer-container {
     border: 3px dotted var(--accent2);
 }
 
+.alert-message.alert-danger {
+    background-color: rgb(216, 75, 93);
+    color: white;
+}
+
+.alert-message.alert-success {
+    background-color: rgb(75, 216, 110);
+}
+
 .clearfix {
     clear: both !important;
 }
@@ -341,4 +350,8 @@ fieldset legend {
 .btn-submit {
     background-color: var(--accent);
     float: right;
+}
+
+.add-vehicle-form fieldset h4{
+    margin-bottom: 1rem;
 }

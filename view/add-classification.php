@@ -31,7 +31,8 @@
                     <fieldset>
                         <legend>Classification</legend>
                         <label for="classificationName">Name</label>
-                        <input type="text" id="classificationName" name="classificationName" class="formInput" />
+                        <h5>*Maximum 30 characters</h5>
+                        <input type="text" id="classificationName" name="classificationName" class="formInput" required maxlength="30" <?php if(isset($classificationName)){echo "value='$classificationName'";} ?>/>
                     </fieldset>
                     <a href="/phpmotors/vehicles" class="button btn-cancel">Cancel</a>
                     <button type="submit" class="button btn-submit">Add Classification</button>
