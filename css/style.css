@@ -56,7 +56,8 @@ h6 {
 p,
 li,
 label,
-legend {
+legend,
+div {
     font-family: var(--paragraph-font);
 }
 
@@ -87,10 +88,25 @@ h3.heading-title {
     padding: 1rem 0;
 }
 
+.container {
+    padding: 0 1rem;
+}
+
+.vertical-divider {
+    border: 1px solid black;
+    margin: 0 1em;
+    height: 1em;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
 .header-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 1rem;
+    align-items: center;
 }
 
 .header-container img.header-logo {
@@ -101,11 +117,22 @@ h3.heading-title {
     height: 60px;
 }
 
-.header-container a.header-signin {
+.header-container span {
     grid-column: 2;
     grid-row: 1;
+    justify-self: center;
+}
+
+.header-container .header-signin {
+    grid-column: 3;
+    grid-row: 1;
     justify-self: self-end;
-    padding: 1rem 1rem 0 0;
+    padding-right: 1rem;
+}
+
+.header-container div.header-signin {
+    display: flex;
+    align-items: center;
 }
 
 nav.header-navigation {
@@ -352,6 +379,18 @@ fieldset legend {
     float: right;
 }
 
+.vehicle-management-container {
+    padding: 0 1rem;
+}
+
 .add-vehicle-form fieldset h4{
     margin-bottom: 1rem;
+}
+
+.inventory-management {
+    margin-bottom: 0.5em;
+}
+
+.inventory-management p {
+    margin: 1em 0;
 }

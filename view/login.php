@@ -22,12 +22,12 @@
         <div class="login-container">
             <h1 class="heading-title text-center">LOGIN</h1>
             <?php
-            if (isset($message)) {
-                echo $message;
+            if (isset($_SESSION['message'])) {
+                echo "<p class='alert-message'>".$_SESSION['message']."</p>";
             }
             ?>
             <div>
-                <form action="/phpmotors/accounts/index.php" method="POST">
+                <form action="/phpmotors/accounts/" method="POST">
                     <input type="hidden" name="action" value="Login">
                     <label for="clientEmail">Email</label>
                     <input type="email" id="clientEmail" name="clientEmail" <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?>  required>

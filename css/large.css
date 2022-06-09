@@ -27,13 +27,6 @@
         border-radius: 0 0 9px 9px;
     }
 
-    .header-container img.header-logo {
-    }
-
-    .header-container a.header-signin {
-        padding: 1rem 2rem 0 0;
-    }
-
     nav.header-navigation {
         padding-left: 1rem;
         border-left: 3px solid var(--accent2);

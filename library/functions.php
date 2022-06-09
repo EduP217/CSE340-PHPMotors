@@ -32,7 +32,7 @@ function checkText($color){
 
 function buildNavigationList($action, $classifications){    
     // Build a navigation bar using the $classifications array
-    $activeClass = ($action == null) ? 'active':'';
+    $activeClass = ($action == 'home') ? 'active':'';
     $navList = '<ul>';
     $navList .= "<li><a href='/phpmotors' class='$activeClass' title='View the PHP Motors home page'>Home</a></li>";
     foreach ($classifications as $classification) {
