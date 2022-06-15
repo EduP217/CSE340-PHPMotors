@@ -22,8 +22,11 @@
         <div class="login-container">
             <h1 class="heading-title text-center">LOGIN</h1>
             <?php
+            if (isset($message)) {
+                echo $message;
+            }
             if (isset($_SESSION['message'])) {
-                echo "<p class='alert-message'>".$_SESSION['message']."</p>";
+                echo $_SESSION['message'];
             }
             ?>
             <div>
@@ -53,3 +56,4 @@
 </body>
 
 </html>
+<?php unset($_SESSION['message']); ?>

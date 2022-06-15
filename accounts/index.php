@@ -45,14 +45,14 @@ switch ($action) {
         $existingEmail = checkExistingEmail($clientEmail);
         // Check for existing email address in the table
         if ($existingEmail) {
-            $_SESSION['message'] = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+            $message = '<p class="alert-message">That email address already exists. Do you want to login instead?</p>';
             include '../view/login.php';
             exit;
         }
 
         // Check for missing data
         if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
-            $_SESSION['message'] = "<p class='alert-message'>Please provide information for all empty form fields.</p>";
+            $message = "<p class='alert-message'>Please provide information for all empty form fields.</p>";
             include '../view/registration.php';
             exit;
         }
@@ -65,13 +65,13 @@ switch ($action) {
         // Check and report the result
         if ($regOutcome === 1) {
             setcookie('firstname', $clientFirstname, strtotime('+1 minute'), '/');
-            $_SESSION['message'] = "Thanks for registering $clientFirstname. Please use your email and password to login.";
+            $_SESSION['message'] = "<p class='alert-message alert-success'>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
             header('Location: /phpmotors/accounts/?action=login');
             //$message = "<p class='alert-message'>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
             //include '../view/login.php';
             //exit;
         } else {
-            $_SESSION['message'] = "Sorry $clientFirstname, but the registration failed. Please try again.";
+            $message = "<p class='alert-message alert-danger'>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
             include '../view/registration.php';
             exit;
         }
@@ -82,7 +82,7 @@ switch ($action) {
         $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
         $checkPassword = checkPassword($clientPassword);
         if (empty($clientEmail) || empty($checkPassword)) {
-            $_SESSION['message'] = "Please provide a valid email address and password.";
+            $message = "<p class='alert-message alert-danger'>Please provide a valid email address and password.</p>";
             include '../view/login.php';
             exit;
         }
@@ -96,7 +96,7 @@ switch ($action) {
         // If the hashes don't match create an error
         // and return to the login view
         if (!$hashCheck) {
-            $_SESSION['message'] = 'Please check your password and try again.';
+            $message = "<p class='alert-message alert-danger'>Please check your password and try again.</p>";
             include '../view/login.php';
             exit;
         }

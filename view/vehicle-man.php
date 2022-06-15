@@ -1,5 +1,5 @@
-<?php if (!isset($_SESSION['loggedin']) || $_SESSION['clientData']['clientLevel'] == 1) header('Location: /phpmotors'); ?>
-<!DOCTYPE html>
+<?php if (!isset($_SESSION['loggedin']) || $_SESSION['clientData']['clientLevel'] == 1) {header('Location: /phpmotors');}
+if (isset($_SESSION['message'])) { $message = $_SESSION['message'];}?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -55,3 +55,4 @@
 </body>
 
 </html>
+<?php unset($_SESSION['message']); ?>
