@@ -85,7 +85,24 @@ textarea, .textarea {
 h1.heading-title,
 h2.heading-title,
 h3.heading-title {
-    padding: 1rem 0;
+    margin: 1rem 0;
+}
+
+h1.heading-subtitle,
+h2.heading-subtitle,
+h3.heading-subtitle {
+    margin: .5rem 0;
+}
+
+table {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+th, td {
+    margin: 0;
+    padding: .5rem;
+    text-align: left;
 }
 
 .container {
@@ -341,8 +358,12 @@ footer .footer-container {
     clear: both !important;
 }
 
-.add-classification-container, .add-vehicle-container {
+.add-classification-container, .add-vehicle-container, .update-vehicle-container, .remove-vehicle-container {
     padding: 0 1rem;
+}
+
+.remove-vehicle-container p {
+    margin-bottom: 1rem;
 }
 
 form {
@@ -361,6 +382,10 @@ fieldset legend {
     margin: 0.5rem 0;
     box-sizing: border-box;
     padding: 0.75rem 0.5rem;
+}
+
+.formInput.small{
+    max-width: 300px;
 }
 
 .button {
@@ -384,7 +409,7 @@ fieldset legend {
 }
 
 .vehicle-management-container p {
-    margin: 1rem 0;
+    margin: .5rem 0;
 }
 
 .add-vehicle-form fieldset h4{
@@ -397,4 +422,23 @@ fieldset legend {
 
 .inventory-management p {
     margin: 1em 0;
+}
+
+
+/*
+**  TABLE STYLES
+*/
+
+.table-small {
+    max-width: 450px;
+}
+
+.table-bordered {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid black;
+    box-sizing:border-box;
 }

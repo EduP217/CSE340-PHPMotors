@@ -1,5 +1,4 @@
-<?php if (!isset($_SESSION['loggedin']) || $_SESSION['clientData']['clientLevel'] == 1) header('Location: /phpmotors'); ?>
-<!DOCTYPE html>
+<?php if (!isset($_SESSION['loggedin']) || $_SESSION['clientData']['clientLevel'] == 1) header('Location: /phpmotors'); ?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,7 +25,7 @@
         <?php echo $navList; ?>
     </nav>
     <main>
-        <div class="add-vehicle-container">
+        <div class="update-vehicle-container">
             <h1 class="heading-title">
                 <?php
                 if (isset($invInfo['invMake']) && isset($invInfo['invModel'])) {
@@ -41,7 +40,7 @@
                 echo $message;
             }
             ?>
-            <div class="add-vehicle-form">
+            <div class="update-vehicle-form">
                 <form method="POST" action="/phpmotors/vehicles/index.php">
                     <input type="hidden" name="action" value="updateVehicle">
                     <input type="hidden" name="invId" <?php if(isset($invId)){ echo "value='$invId'"; } elseif(isset($invInfo['invId'])) {echo "value='$invInfo[invId]'"; }?>>

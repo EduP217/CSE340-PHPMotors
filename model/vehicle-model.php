@@ -127,4 +127,21 @@ function updateVehicle(
     return $rowsChanged;
 }
 
+function deleteVehicle($invId) {
+    $db = phpmotorsConnect();
+    $sql = 'DELETE FROM inventory WHERE invId = :invId';
+    try {
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+        $stmt->execute();
+        $rowsChanged = $stmt->rowCount();
+        $stmt->closeCursor();
+    } catch(\Exception $e) {
+        //throw $th;
+        //print($e);
+        $rowsChanged = 0;
+    }
+    return $rowsChanged;
+}
+
 ?>

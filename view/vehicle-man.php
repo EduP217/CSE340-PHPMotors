@@ -32,7 +32,7 @@ if (isset($_SESSION['message'])) { $message = $_SESSION['message'];}?><!DOCTYPE 
                 echo $message;
             }
             if (isset($classificationList)) {
-                echo '<h2>Vehicles By Classification</h2>';
+                echo '<h2 class="heading-subtitle">Vehicles By Classification</h2>';
                 echo '<p>Choose a classification to see those vehicles</p>';
                 echo $classificationList;
             }
@@ -42,7 +42,7 @@ if (isset($_SESSION['message'])) { $message = $_SESSION['message'];}?><!DOCTYPE 
                 <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
             </noscript>
 
-            <table id="inventoryDisplay"></table>
+            <table id="inventoryDisplay" class="table-bordered table-small"></table>
         </div>
     </main>
     <footer>
