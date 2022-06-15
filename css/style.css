@@ -383,6 +383,10 @@ fieldset legend {
     padding: 0 1rem;
 }
 
+.vehicle-management-container p {
+    margin: 1rem 0;
+}
+
 .add-vehicle-form fieldset h4{
     margin-bottom: 1rem;
 }

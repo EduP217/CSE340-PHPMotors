@@ -1,4 +1,5 @@
-<?php if(!isset($_SESSION['loggedin']) || $_SESSION['clientData']['clientLevel'] == 1) header('Location: /phpmotors');?><!DOCTYPE html>
+<?php if (!isset($_SESSION['loggedin']) || $_SESSION['clientData']['clientLevel'] == 1) header('Location: /phpmotors'); ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,6 +26,23 @@
                 <li><a href="?action=add-classification"><u>Add Classification</u></a></li>
                 <li><a href="?action=add-vehicle"><u>Add Vehicle</u></a></li>
             </ul>
+            
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            if (isset($classificationList)) {
+                echo '<h2>Vehicles By Classification</h2>';
+                echo '<p>Choose a classification to see those vehicles</p>';
+                echo $classificationList;
+            }
+            ?>
+
+            <noscript>
+                <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
+            </noscript>
+
+            <table id="inventoryDisplay"></table>
         </div>
     </main>
     <footer>
@@ -33,6 +51,7 @@
 
     <script src="../js/utils.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/inventory.js"></script>
 </body>
 
 </html>

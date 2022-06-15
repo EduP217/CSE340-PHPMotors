@@ -97,7 +97,29 @@ switch ($action) {
             exit;
         }
         break;
+    /* * ********************************** 
+    * Get vehicles by classificationId 
+    * Used for starting Update & Delete process 
+    * ********************************** */
+    case 'getInventoryItems':
+        // Get the classificationId 
+        $classificationId = filter_input(INPUT_GET, 'classificationId', FILTER_SANITIZE_NUMBER_INT);
+        // Fetch the vehicles by classificationId from the DB 
+        $inventoryArray = getInventoryByClassification($classificationId);
+        // Convert the array to a JSON object and send it back 
+        echo json_encode($inventoryArray);
+        break;
+    case 'mod':
+        $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
+        $invInfo = getInvItemInfo($invId);
+        if(!$invInfo || count($invInfo)<1){
+            $message = '<p class="alert-message alert-danger">Sorry, no vehicle information could be found.</p>';
+        }
+        include '../view/update-vehicle.php';
+        exit;
+        break;
     default:
+        $classificationList = buildClassificationList($classifications);
         include '../view/vehicle-man.php';
 }
 
