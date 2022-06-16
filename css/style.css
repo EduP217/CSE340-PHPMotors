@@ -424,6 +424,11 @@ fieldset legend {
     margin: 1em 0;
 }
 
+.text-alert {
+    color: rgb(240, 0, 0);
+    font-weight: bold;
+    font-style: oblique;
+}
 
 /*
 **  TABLE STYLES

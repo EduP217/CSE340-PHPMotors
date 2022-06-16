@@ -47,7 +47,8 @@ switch ($action) {
         $regOutcome = regClassification($classificationName);
         if ($regOutcome === 1) {
             $message = "<p class='alert-message alert-success'>The classification, $classificationName was addedd successfully.</p>";
-            include '../view/add-classification.php';
+            $_SESSION['message'] = $message;
+            header('location: /phpmotors/vehicles/');
             exit;
         } else {
             $message = "<p class='alert-message'>Sorry, but adding the new classification failed. Please try again.</p>";
@@ -89,7 +90,8 @@ switch ($action) {
         $regOutcome = regVehicle($vehicleMake, $vehicleModel, $vehicleDescription, $vehicleImageFile, $vehicleThumbnailFile, $vehiclePrice, $vehicleStock, $vehicleColor, $classificationId);
         if ($regOutcome === 1) {
             $message = "<p class='alert-message alert-success'>The vehicle, $vehicleMake $vehicleModel was addedd successfully.</p>";
-            include '../view/add-vehicle.php';
+            $_SESSION['message'] = $message;
+            header('location: /phpmotors/vehicles/');
             exit;
         } else {
             $message = "<p class='alert-message alert-danger'>Sorry, but adding the new vehicle failed. Please try again.</p>";

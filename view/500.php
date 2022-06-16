@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>500 - PHP Motors</title>
 
-    <link rel="stylesheet" href="css/style.css" media="screen">
-    <link rel="stylesheet" href="css/large.css" media="screen">
+    <link rel="stylesheet" href="/css/style.css" media="screen">
+    <link rel="stylesheet" href="/css/large.css" media="screen">
 </head>
 
 <body>
     <header>
-        <?php include 'snippets/header.php'; ?>
+        <?php include '../snippets/header.php'; ?>
     </header>
     <main>
         <div class="exception-container">
@@ -25,11 +25,11 @@
         </div>
     </main>
     <footer>
-        <?php include 'snippets/footer.php'; ?>
+        <?php include '../snippets/footer.php'; ?>
     </footer>
 
-    <script src="js/utils.js"></script>
-    <script src="js/script.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

@@ -20,7 +20,7 @@
     <main>
         <div class="remove-vehicle-container">
             <h1 class="heading-title"><?php if(isset($invInfo['invMake'])){echo "Delete $invInfo[invMake] $invInfo[invModel]";} ?></h1>
-            <p>Confirm Vehicle Deletion. The delete is permanent.</p>
+            <p class="text-alert">Confirm Vehicle Deletion. The delete is permanent.</p>
             <?php
             if (isset($message)) {
                 echo $message;
