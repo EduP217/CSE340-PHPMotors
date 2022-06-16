@@ -80,4 +80,8 @@
     .home-container .car-details .reviews ul {
         margin-top: 1rem;
     }
+
+    .account-management, .inventory-management {
+        margin: 2em 0;
+    }
 }

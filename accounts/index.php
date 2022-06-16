@@ -42,6 +42,13 @@ switch ($action) {
         $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
         $checkPassword = checkPassword($clientPassword);
 
+        // Check for missing data
+        if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
+            $message = "<p class='alert-message'>Please provide information for all empty form fields.</p>";
+            include '../view/registration.php';
+            exit;
+        }
+        
         $existingEmail = checkExistingEmail($clientEmail);
         // Check for existing email address in the table
         if ($existingEmail) {
@@ -50,12 +57,6 @@ switch ($action) {
             exit;
         }
 
-        // Check for missing data
-        if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
-            $message = "<p class='alert-message'>Please provide information for all empty form fields.</p>";
-            include '../view/registration.php';
-            exit;
-        }
         // Hash the checked password
         $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
 
@@ -116,6 +117,81 @@ switch ($action) {
         session_unset();
         session_destroy();
         header('Location: /phpmotors');
+        break;
+    case 'modifyAccount':
+        $clientFirstname = $_SESSION['clientData']['clientFirstname'];
+        $clientLastname = $_SESSION['clientData']['clientLastname'];
+        $clientEmail = $_SESSION['clientData']['clientEmail'];
+        $clientId = $_SESSION['clientData']['clientId'];
+        include '../view/client-update.php';
+        break;
+    case 'updateAccount':
+        $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
+        $clientFirstname = trim(filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $clientLastname = trim(filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $clientEmail = trim(filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL));
+        $clientEmail = checkEmail($clientEmail);
+
+        // Check for missing data
+        if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)) {
+            $accountMessage = "<p class='alert-message alert-danger'>Please provide information for all empty form fields.</p>";
+            include '../view/client-update.php';
+            exit;
+        }
+
+        if ($clientEmail != $_SESSION['clientData']['clientEmail']){
+            $existingEmail = checkExistingEmail($clientEmail);
+            // Check for existing email address in the table
+            if ($existingEmail) {
+                $accountMessage = '<p class="alert-message alert-danger">That email address already exists. Do you want to login instead?</p>';
+                include '../view/client-update.php';
+                exit;
+            }
+        }
+
+        $updateOutcome = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
+
+        if ($updateOutcome === 1) {
+            $_SESSION['clientData']['clientFirstname'] = $clientFirstname;
+            $_SESSION['clientData']['clientLastname'] = $clientLastname;
+            $_SESSION['clientData']['clientEmail'] = $clientEmail;
+
+            setcookie('firstname', $clientFirstname, strtotime('+1 minute'), '/');
+            $_SESSION['message'] = "<p class='alert-message alert-success'>$clientFirstname, Your information has been updated.</p>";
+            header('Location: /phpmotors/accounts/');
+        } else {
+            $message = "<p class='alert-message alert-danger'>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+            include '../view/client-update.php';
+            exit;
+        }
+
+        break;
+    case 'updatePassword':
+        $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
+        $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $checkPassword = checkPassword($clientPassword);
+
+        // Check for missing data
+        if (empty($checkPassword)) {
+            $passwordMessage = "<p class='alert-message alert-danger'>Please make sure your password matches the desired pattern.</p>";
+            include '../view/client-update.php';
+            exit;
+        }
+
+        // Hash the checked password
+        $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+
+        $updateOutcome = updatePassword($hashedPassword, $clientId);
+
+        if ($updateOutcome === 1) {
+            $_SESSION['message'] = "<p class='alert-message alert-success'>$clientFirstname, Your password has been updated.</p>";
+            header('Location: /phpmotors/accounts/');
+        } else {
+            $message = "<p class='alert-message alert-danger'>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+            include '../view/client-update.php';
+            exit;
+        }
+
         break;
     default:
         include '../view/admin.php';

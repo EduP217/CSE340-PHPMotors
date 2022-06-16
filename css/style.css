@@ -84,13 +84,17 @@ textarea, .textarea {
 
 h1.heading-title,
 h2.heading-title,
-h3.heading-title {
+h3.heading-title,
+h4.heading-title,
+h5.heading-title {
     margin: 1rem 0;
 }
 
 h1.heading-subtitle,
 h2.heading-subtitle,
-h3.heading-subtitle {
+h3.heading-subtitle,
+h4.heading-subtitle,
+h5.heading-subtitle {
     margin: .5rem 0;
 }
 
@@ -307,17 +311,17 @@ footer .footer-container {
     font-weight: bold;
 }
 
-.register-container {
+.register-container, .manage-account-container {
     padding: 1rem;
 }
 
-.register-container div {
+.register-container form, .manage-account-container form {
     width: 100%;
     max-width: 350px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
 }
 
-.register-container input {
+.register-container input, .manage-account-container input {
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
@@ -325,14 +329,14 @@ footer .footer-container {
     display: inline-block;
 }
 
-.register-container button {
+.register-container button, .manage-account-container button {
     padding: 0.5rem;
     margin: 0.5rem 0;
     background-color: var(--accent);
     font-weight: bold;
 }
 
-.register-container button.show-password {
+.register-container button.show-password, .manage-account-container button.show-password {
     background-color: var(--border);
     color: var(--white);
     display: block;
@@ -340,7 +344,7 @@ footer .footer-container {
 
 .alert-message {
     padding: 1rem 0.5rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     font-weight: bold;
     border: 3px dotted var(--accent2);
 }
@@ -416,11 +420,11 @@ fieldset legend {
     margin-bottom: 1rem;
 }
 
-.inventory-management {
-    margin-bottom: 0.5em;
+.account-management, .inventory-management {
+    margin: 1em 0;
 }
 
-.inventory-management p {
+.account-management p, .inventory-management p {
     margin: 1em 0;
 }
 
