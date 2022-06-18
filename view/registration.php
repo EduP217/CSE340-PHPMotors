@@ -20,7 +20,7 @@
     </nav>
     <main>
         <div class="register-container">
-            <h1 class="heading-title text-center">REGISTER</h1>
+            <h1 class="heading-title">REGISTER</h1>
             <?php
             if (isset($message)) {
                 echo $message;

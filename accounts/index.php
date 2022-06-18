@@ -150,6 +150,7 @@ switch ($action) {
         }
 
         $updateOutcome = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
+        //print($updateOutcome);
 
         if ($updateOutcome === 1) {
             $_SESSION['clientData']['clientFirstname'] = $clientFirstname;
@@ -160,7 +161,7 @@ switch ($action) {
             $_SESSION['message'] = "<p class='alert-message alert-success'>$clientFirstname, Your information has been updated.</p>";
             header('Location: /phpmotors/accounts/');
         } else {
-            $message = "<p class='alert-message alert-danger'>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+            $accountMessage = "<p class='alert-message alert-danger'>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
             include '../view/client-update.php';
             exit;
         }
@@ -187,7 +188,7 @@ switch ($action) {
             $_SESSION['message'] = "<p class='alert-message alert-success'>$clientFirstname, Your password has been updated.</p>";
             header('Location: /phpmotors/accounts/');
         } else {
-            $message = "<p class='alert-message alert-danger'>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+            $passwordMessage = "<p class='alert-message alert-danger'>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
             include '../view/client-update.php';
             exit;
         }

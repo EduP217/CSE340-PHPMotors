@@ -429,9 +429,8 @@ fieldset legend {
 }
 
 .text-alert {
-    color: rgb(240, 0, 0);
-    font-weight: bold;
-    font-style: oblique;
+    font-style: italic;
+    text-shadow: 0 0 red;
 }
 
 /*

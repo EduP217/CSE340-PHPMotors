@@ -18,6 +18,10 @@ const months = {
 
 function init() {
     calculateLastUpdate();
+
+    document.querySelector('.show-password').addEventListener('click', function() {
+        document.querySelector('#clientPassword').setAttribute('type','text');
+    });
 }
 
 function calculateLastUpdate() {

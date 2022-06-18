@@ -32,8 +32,8 @@
                         <legend>Vehicle</legend>
                         <h4>*Note all Fields are Required</h4>
                         <label for="classificationId">Classification</label>
-                        <select id="classificationId" name="classificationId" class="formInput">
-                            <option>Choose Car Classification</option>
+                        <select id="classificationId" name="classificationId" class="formInput" required>
+                            <option value="">Choose Car Classification</option>
                             <?php 
                             foreach ($classifications as $classification) {
                                 $classifId = $classification['classificationId'];

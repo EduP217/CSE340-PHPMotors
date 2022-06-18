@@ -53,6 +53,7 @@
                     <h5 class="heading-subtitle">*note your original password will be changed</h5>
                     <label for="clientPassword">Password</label>
                     <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    <button type="button" title="Show Password" class="show-password">Show Password</button>
                     <button type="submit" name="submit" class="updbtn">Update Password</button>
                     <input type="hidden" name="action" value="updatePassword">
                     <input type="hidden" name="clientId" value="<?php if (isset($clientId)) {echo $clientId;} ?>" />

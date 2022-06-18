@@ -49,7 +49,7 @@
                         <h4>*Note all Fields are Required</h4>
                         <label for="classificationId">Classification</label>
                         <select id="classificationId" name="classificationId" class="formInput" required>
-                            <option>Choose Car Classification</option>
+                            <option value="">Choose Car Classification</option>
                             <?php
                             foreach ($classifications as $classification) {
                                 $classifId = $classification['classificationId'];
