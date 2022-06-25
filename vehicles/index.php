@@ -176,6 +176,29 @@ switch ($action) {
             exit;
         }
         break;
+    case 'classification':
+        $classificationName = filter_input(INPUT_GET, 'classificationName', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $navList = buildNavigationList($classificationName, $classifications);
+        $vehicles = getVehiclesByClassification($classificationName);
+        if(!count($vehicles)){
+            $message = "<p class='alert-message alert-danger'>Sorry, no $classificationName vehicles could be found.</p>";
+        } else {
+            $vehicleDisplay = buildVehiclesDisplay($vehicles);
+        }
+        include '../view/classification.php';
+        break;
+    case 'vehicleDetail':
+        $vehicleId = filter_input(INPUT_GET, 'vehicleId', FILTER_SANITIZE_NUMBER_INT);
+        $vehicle = findVehicleById($vehicleId);
+        if(!$vehicle){
+            $pageTitle = 'Not Found';
+            $message = "<p class='alert-message alert-danger'>Sorry, the vehicle could not be found.</p>";
+        } else {
+            $pageTitle = $vehicle['invMake']." ".$vehicle['invModel'];
+            $vehicleDisplay = buildVehicleDisplay($vehicle);
+        }
+        include '../view/vehicle-detail.php';
+        break;
     default:
         $classificationList = buildClassificationList($classifications);
         include '../view/vehicle-man.php';

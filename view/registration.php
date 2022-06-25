@@ -53,6 +53,7 @@
 
     <script src="../js/utils.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/auth.js"></script>
 </body>
 
 </html>

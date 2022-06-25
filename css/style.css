@@ -13,6 +13,10 @@
     --accent-font: 'Share Tech Mono', monospace;
 }
 
+html {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -20,6 +24,10 @@ body {
     background-size: 30%;
     background-repeat: repeat;
     background-position: center center;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
 }
 
 h1,
@@ -114,9 +122,14 @@ th, td {
 }
 
 .vertical-divider {
-    border: 1px solid black;
+    border: 1px solid var(--border);
     margin: 0 1em;
     height: 1em;
+}
+
+.horizontal-divider {
+    border: 1px solid var(--border);
+    margin: 1em 0;
 }
 
 .text-underline {
@@ -449,4 +462,87 @@ fieldset legend {
 .table-bordered td, .table-bordered th {
     border: 1px solid black;
     box-sizing:border-box;
+}
+
+.classification-list {
+    padding: 0;
+    /*display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    grid-gap: 1rem;*/
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.classification-list li {
+    list-style: none;
+    padding: 0;
+    border: 1px solid var(--border);
+    text-align: center;
+    padding-bottom: 0.75em;
+    border-radius: 9px;
+    margin: 1em 0;
+    width: 175px;
+}
+
+.classification-list li img {
+    width: 100%;
+    height: 130px;
+    object-fit: fill;
+    border-radius: 9px 9px 0 0;
+}
+
+.classification-list li h3 {
+    margin: 0.5em 0;
+    padding: 0 .5em;
+    text-decoration: underline;
+}
+
+.classification-list li span {
+    font-family: var(--accent-font);
+    font-weight: bold;
+}
+
+/*#inv-display {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#inv-display li {
+    margin-bottom: .5em;
+    border: 1px #ccc solid;
+    list-style-type: none;
+    flex: 1 1 auto;
+}
+
+#inv-display li img {
+    max-width: 100%;
+}*/
+
+.vehicle-detail-container h1.heading-title {
+    margin-left: 1rem;
+}
+
+.vehicle-detail-grid {
+    display: block;
+    font-weight: bold;
+}
+
+.vehicle-detail-grid img {
+    width: 100%;
+}
+
+.vehicle-detail-grid h2, .vehicle-detail-grid h3 {
+    margin: 1em 0;
+    padding-left: 1rem;
+}
+
+.vehicle-detail-grid p {
+    padding: 1rem;
+}
+
+.vehicle-detail-grid p.colored {
+    background-color: whitesmoke;
 }

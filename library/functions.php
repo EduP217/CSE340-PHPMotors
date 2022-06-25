@@ -45,7 +45,7 @@ function buildNavigationList($action, $classifications)
     foreach ($classifications as $classification) {
         $classificationNavName = strtolower($classification['classificationName']);
         $activeClass = ($classificationNavName == $action) ? 'active' : '';
-        $navList .= "<li><a href='/phpmotors?action=" . urlencode($classificationNavName) . "' class='$activeClass' title='View our $classificationNavName product line'>$classificationNavName</a></li>";
+        $navList .= "<li><a href='/phpmotors/vehicles/?action=classification&classificationName=" . urlencode($classificationNavName) . "' class='$activeClass' title='View our $classificationNavName lineup of vehicles'>$classificationNavName</a></li>";
     }
     $navList .= '</ul>';
     //echo $navList;
@@ -63,4 +63,33 @@ function buildClassificationList($classifications)
     }
     $classificationList .= '</select>';
     return $classificationList;
+}
+
+function buildVehiclesDisplay($vehicles)
+{
+    $dv = '<ul id="inv-display" class="classification-list">';
+    foreach ($vehicles as $vehicle) {
+        $dv .= '<li>';
+        $dv .= "<a href='/phpmotors/vehicles/?action=vehicleDetail&vehicleId=$vehicle[invId]'><img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors'></a>";
+        $dv .= '<div class="horizontal-divider"></div>';
+        $dv .= "<h3><a href='/phpmotors/vehicles/?action=vehicleDetail&vehicleId=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h3>";
+        $dv .= "<span>$".number_format($vehicle['invPrice'])."</span>";
+        $dv .= '</li>';
+    }
+    $dv .= '</ul>';
+    return $dv;
+}
+
+function buildVehicleDisplay($vehicle)
+{
+    $dv = "<h1 class='heading-title'>$vehicle[invMake] $vehicle[invModel]</h1>";
+    $dv .= "<div class='vehicle-detail-grid'>";
+    $dv .= "<img src='$vehicle[invImage]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors'>";
+    $dv .= "<h2>Price: $".number_format($vehicle['invPrice'])."</h2>";
+    $dv .= "<h3>$vehicle[invMake] $vehicle[invModel] Details</h3>";
+    $dv .= "<p class='colored'>$vehicle[invDescription]</p>";
+    $dv .= "<p>Color: $vehicle[invColor]</p>";
+    $dv .= "<p class='colored'># in stock: $vehicle[invStock]</p>";
+    $dv .= "</div>";
+    return $dv;
 }

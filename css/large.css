@@ -31,7 +31,7 @@
         padding-left: 1rem;
         border-left: 3px solid var(--accent2);
         border-right: 3px solid var(--accent2);
-        max-width: 980px;
+        max-width: 1000px;
         margin: 0 auto;
     }
 
@@ -83,5 +83,82 @@
 
     .account-management, .inventory-management {
         margin: 2em 0;
+    }
+
+    /* For vehicle display in classification view */
+	/*#inv-display {
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+	#inv-display h2{
+		font-size: 1rem;
+	}
+
+	#inv-display li {
+		max-width: 200px;
+		flex: 1 0 auto;
+		text-align: center;
+		height: 250px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+      
+	#inv-display div {
+		width: 100%;
+	}
+    .classification-list {
+		flex-flow: row wrap;
+		justify-content: flex-start;
+    }
+    
+    .classification-list li {
+		max-width: 200px;
+		flex: 1 0 auto;
+		justify-content: space-between;
+    }*/
+
+    .vehicle-detail-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .vehicle-detail-container h1, .vehicle-detail-container h2, .vehicle-detail-container h3 {
+        padding: 0;
+    }
+
+    .vehicle-detail-grid img {
+        grid-column: 1;
+        grid-row: 1/5;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    .vehicle-detail-grid h2 {
+        grid-column: 1;
+        grid-row: 5;
+    }
+
+    .vehicle-detail-grid h3 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .vehicle-detail-grid p:nth-child(4) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .vehicle-detail-grid p:nth-child(5) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .vehicle-detail-grid p:nth-child(6) {
+        grid-column: 2;
+        grid-row: 4;
     }
 }

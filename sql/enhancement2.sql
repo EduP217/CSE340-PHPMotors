@@ -5,3 +5,4 @@ SELECT `invModel`, `classificationName` FROM `inventory` i INNER JOIN `carclassi
 DELETE FROM `inventory` WHERE `invId` = 1;
 UPDATE `inventory` SET `invImage`=CONCAT('/phpmotors',`invImage`),`invThumbnail`= CONCAT('/phpmotors',`invThumbnail`);
 INSERT INTO `carclassification`(`classificationId`, `classificationName`) VALUES ('6','prueba');
+UPDATE `inventory` SET `invImage`= replace(`invImage`, '/images/', '/images/vehicles/'), `invThumbnail`= replace(`invThumbnail`, '/images/', '/images/vehicles/') WHERE `invId`>0;

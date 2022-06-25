@@ -16,14 +16,6 @@ const months = {
     11: 'December'
 }
 
-function init() {
-    calculateLastUpdate();
-
-    document.querySelector('.show-password').addEventListener('click', function() {
-        document.querySelector('#clientPassword').setAttribute('type','text');
-    });
-}
-
 function calculateLastUpdate() {
     let lastUpdated = getLocalStorageItem(lastUpdateKey);
     if(lastUpdated){
@@ -42,4 +34,4 @@ function leadZeros(num) {
     return num.toString().padStart(2,'0');
 }
 
-init();
+calculateLastUpdate();
