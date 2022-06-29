@@ -20,5 +20,3 @@ function getClassifications()
     // was called (this should be the controller) 
     return $classifications;
 }
-
-?>

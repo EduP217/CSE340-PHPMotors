@@ -10,6 +10,7 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 // Get the vehicle model
 require_once '../model/vehicle-model.php';
+require_once '../model/images-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 
@@ -194,8 +195,9 @@ switch ($action) {
             $pageTitle = 'Not Found';
             $message = "<p class='alert-message alert-danger'>Sorry, the vehicle could not be found.</p>";
         } else {
+            $vehicleImages = getImagesByVehicle($vehicle["invId"]);
             $pageTitle = $vehicle['invMake']." ".$vehicle['invModel'];
-            $vehicleDisplay = buildVehicleDisplay($vehicle);
+            $vehicleDisplay = buildVehicleDisplay($vehicle, $vehicleImages);
         }
         include '../view/vehicle-detail.php';
         break;

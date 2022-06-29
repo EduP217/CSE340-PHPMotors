@@ -22,14 +22,10 @@
         <div class="home-container">
             <h1 class="heading-title">Welcome to PHP Motors!</h1>
             <div class="image-banner">
-                <img src="images/delorean.jpg" alt="banner">
+                <img src="<?php echo $delorean['ImgPath'] ?>" alt="banner">
                 <div class="banner-spotlight">
-                    <h2>DMC Delorean</h2>
-                    <p>
-                        3 cup holders<br>
-                        Superman doors<br>
-                        Fuzzy dice!<br>
-                    </p>
+                    <h2><?php echo "$delorean[invMake] $delorean[invModel]" ?></h2>
+                    <p><?php echo nl2br($delorean['invDescription']) ?></p>
                 </div>
                 <button type="button">Own Today</button>
             </div>

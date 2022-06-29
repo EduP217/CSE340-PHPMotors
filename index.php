@@ -8,6 +8,7 @@ session_start();
 require_once 'library/connections.php';
 // Get the PHP Motors model for use as needed
 require_once 'model/main-model.php';
+require_once 'model/images-model.php';
 // Get the functions library
 require_once 'library/functions.php';
 
@@ -48,6 +49,7 @@ switch ($action) {
         include 'view/used.php';
         break;
     default:
+        $delorean = getFrontPageItem(34);
         include 'view/home.php';
 }
 

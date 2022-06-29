@@ -80,16 +80,26 @@ function buildVehiclesDisplay($vehicles)
     return $dv;
 }
 
-function buildVehicleDisplay($vehicle)
+function buildVehicleDisplay($vehicle, $images)
 {
     $dv = "<h1 class='heading-title'>$vehicle[invMake] $vehicle[invModel]</h1>";
     $dv .= "<div class='vehicle-detail-grid'>";
-    $dv .= "<img src='$vehicle[invImage]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors'>";
-    $dv .= "<h2>Price: $".number_format($vehicle['invPrice'])."</h2>";
-    $dv .= "<h3>$vehicle[invMake] $vehicle[invModel] Details</h3>";
-    $dv .= "<p class='colored'>$vehicle[invDescription]</p>";
+    $dv .= "<h2 class='hidden-md'>Vehicle Thumbnails</h2>";
+    $dv .= "<div class='images-thumbnail'>";
+    $imageSelected = '';
+    foreach ($images as $image){
+        $dataSrc = str_replace('-tn.','.',$image['ImgPath']);
+        if(!$imageSelected and $image['ImgPrimary'] == '1'){
+            $imageSelected = $dataSrc;
+        }
+        $dv .= "<img src='$image[ImgPath]' alt='$image[ImgName]' data-src='$dataSrc' />";
+    }
+    $dv .= "</div>";
+    $dv .= "<img id='imageVehicleSelected' src='$imageSelected' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors'>";
+    $dv .= "<p>$".number_format($vehicle['invPrice'])."</p>";
+    $dv .= "<p>$vehicle[invDescription]</p>";
     $dv .= "<p>Color: $vehicle[invColor]</p>";
-    $dv .= "<p class='colored'># in stock: $vehicle[invStock]</p>";
+    $dv .= "<p># in stock: $vehicle[invStock]</p>";
     $dv .= "</div>";
     return $dv;
 }
