@@ -48,20 +48,30 @@
     }
 
     .home-container {
-        padding: 0 1rem;
+        /*padding: 0 1rem;*/
+    }
+    
+    .home-container h1.heading-title {
+        padding-left: 1rem;
     }
 
     .home-container .image-banner button {
         position: absolute;
-        top: 8rem;
-        left: 2rem;
+        top: 8.2rem;
+        left: 2.3rem;
         padding: 0.5rem 1rem;
         font-size: 1.5em;
+    }
+
+    .home-container .image-banner img {
+        margin-bottom: 0;
     }
 
     .home-container .image-banner .banner-spotlight {
         top: 1rem;
         left: 2rem;
+        padding: 0.75rem;
+        padding-bottom: 3.5rem;
     }
 
     .home-container .car-details {

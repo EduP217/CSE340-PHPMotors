@@ -7,6 +7,7 @@
     --accent2: #4c96d7;
     --border: #3a3a3a;
     --white: #fff;
+    --notice: #ab0000;
 
     --heading-font: 'Share', cursive;
     --paragraph-font: 'Titillium Web', sans-serif;
@@ -137,7 +138,7 @@ th, td {
 }
 
 .notice {
-    color: red;
+    color: var(--notice);
     font-style: italic;
     font-weight: bold;
     letter-spacing: .1em;
@@ -213,7 +214,11 @@ nav.header-navigation ul li a.active, nav.header-navigation ul li a:hover {
 }
 
 .home-container {
-    padding: 0 0.5rem;
+    /*padding: 0 0.5rem;*/
+}
+
+.home-container .heading-title {
+    padding-left: 0.5rem;
 }
 
 .home-container .image-banner {
@@ -225,8 +230,8 @@ nav.header-navigation ul li a.active, nav.header-navigation ul li a:hover {
     width: 100%;
     height: auto;
     object-fit: cover;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /*margin-top: 1rem;*/
 }
 
 .home-container .image-banner .banner-spotlight {
@@ -235,6 +240,7 @@ nav.header-navigation ul li a.active, nav.header-navigation ul li a:hover {
     left: 0;
     text-align: left;
     background-color: rgba(255, 255, 255, 0.80);
+    padding: 0.5rem;
 }
 
 .home-container .image-banner .banner-spotlight h2,
@@ -247,6 +253,7 @@ nav.header-navigation ul li a.active, nav.header-navigation ul li a:hover {
     padding: 0.5rem 1rem;
     font-size: 1.75em;
     font-weight: bold;
+    margin-bottom: 0.5em;
 }
 
 .home-container .car-details {
@@ -376,7 +383,7 @@ footer .footer-container {
 }
 
 .alert-message.alert-danger {
-    background-color: rgb(216, 75, 93);
+    background-color: var(--notice);
     color: white;
 }
 

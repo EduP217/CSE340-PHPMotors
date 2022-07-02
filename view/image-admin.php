@@ -32,7 +32,7 @@ if (isset($_SESSION['message'])) {
             }?>
 
             <form action="/phpmotors/uploads/" method="post" enctype="multipart/form-data" class="image-man-form">
-                <label for="invItem">Vehicle</label>
+                <label for="invId">Vehicle</label>
                 <?php echo $prodSelect; ?>
                 <label>Is this the main image for the vehicle?</label>
                 <fieldset>
@@ -43,8 +43,8 @@ if (isset($_SESSION['message'])) {
                         <input type="radio" name="imgPrimary" id="priNo" class="pImage" checked value="0">
                     </label>
                 </fieldset>
-                <label>Upload Image:</label>
-                <input type="file" name="file1">
+                <label for="file1">Upload Image:</label>
+                <input type="file" id="file1" name="file1">
                 <button type="submit" class="regbtn">Upload</button>
                 <input type="hidden" name="action" value="upload">
             </form>

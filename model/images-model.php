@@ -3,7 +3,7 @@
 function getFrontPageItem($vehicleId)
 {
     $db = phpmotorsConnect();
-    $sql = "SELECT invMake, invModel, invDescription, ImgPath FROM inventory INNER JOIN images on inventory.invId = images.InvId WHERE inventory.invId=:invId AND images.ImgPath not like '%-tn%' and images.ImgPrimary = 1 LIMIT 1";
+    $sql = "SELECT invMake, invModel, invDescription, ImgPath FROM inventory INNER JOIN images on inventory.invId = images.InvId WHERE inventory.invId=:invId AND images.ImgPath not like '%-tn%' and images.ImgPrimary = 1 ORDER BY ImgId DESC LIMIT 1";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $vehicleId, PDO::PARAM_STR);
     $stmt->execute();

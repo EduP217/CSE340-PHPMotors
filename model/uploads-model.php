@@ -30,7 +30,7 @@ function storeImages($imgPath, $invId, $imgName, $imgPrimary) {
 // Get Image Information from images table
 function getImages() {
     $db = phpmotorsConnect();
-    $sql = 'SELECT imgId, imgPath, imgName, imgDate, inventory.invId, invMake, invModel FROM images JOIN inventory ON images.invId = inventory.invId ORDER BY imgId desc';
+    $sql = 'SELECT imgId, imgPath, imgName, imgDate, inventory.invId, invMake, invModel FROM images JOIN inventory ON images.invId = inventory.invId';
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $imageArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
