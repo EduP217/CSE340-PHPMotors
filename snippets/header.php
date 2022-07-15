@@ -8,4 +8,7 @@
         echo "<a href='/phpmotors/accounts?action=login' class='header-signin'>My Account</a>";
     } ;
     ?>
+    <a href='/phpmotors/search' class='header-search'>
+        <img src='/phpmotors/images/site/search-icon.svg' alt="search" />
+    </a>
 </div>

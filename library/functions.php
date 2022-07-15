@@ -72,7 +72,7 @@ function buildVehiclesDisplay($vehicles)
         $dv .= '<li>';
         $dv .= "<a href='/phpmotors/vehicles/?action=vehicleDetail&vehicleId=$vehicle[invId]'><img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors'></a>";
         $dv .= '<div class="horizontal-divider"></div>';
-        $dv .= "<h3><a href='/phpmotors/vehicles/?action=vehicleDetail&vehicleId=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h3>";
+        $dv .= "<h4><a href='/phpmotors/vehicles/?action=vehicleDetail&vehicleId=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h4>";
         $dv .= "<span>$".number_format($vehicle['invPrice'])."</span>";
         $dv .= '</li>';
     }
@@ -259,3 +259,7 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
     // Free any memory associated with the old image
     imagedestroy($old_image);
 } // ends resizeImage function
+
+function removeHTMLfromStr($text, $htmlAllowed = ''){
+    return strip_tags($text, $htmlAllowed);
+}

@@ -49,7 +49,7 @@ switch ($action) {
         include 'view/used.php';
         break;
     default:
-        $delorean = getFrontPageItem(34);
+        $delorean = getFrontPageItem('dmc','delorean');
         include 'view/home.php';
 }
 

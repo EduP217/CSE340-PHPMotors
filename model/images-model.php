@@ -1,11 +1,12 @@
 <?php
 
-function getFrontPageItem($vehicleId)
+function getFrontPageItem($vehicleMake, $vehicleModel)
 {
     $db = phpmotorsConnect();
-    $sql = "SELECT invMake, invModel, invDescription, ImgPath FROM inventory INNER JOIN images on inventory.invId = images.InvId WHERE inventory.invId=:invId AND images.ImgPath not like '%-tn%' and images.ImgPrimary = 1 ORDER BY ImgId DESC LIMIT 1";
+    $sql = "SELECT invMake, invModel, invDescription, ImgPath FROM inventory INNER JOIN images on inventory.invId = images.InvId WHERE inventory.invMake=:invMake AND inventory.invModel=:invModel AND images.ImgPath not like '%-tn%' and images.ImgPrimary = 1 ORDER BY ImgId DESC LIMIT 1";
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':invId', $vehicleId, PDO::PARAM_STR);
+    $stmt->bindValue(':invMake', $vehicleMake, PDO::PARAM_STR);
+    $stmt->bindValue(':invModel', $vehicleModel, PDO::PARAM_STR);
     $stmt->execute();
     $vehicle = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();

@@ -57,8 +57,8 @@
 
     .home-container .image-banner button {
         position: absolute;
-        top: 8.2rem;
-        left: 2.3rem;
+        top: 9.65rem;
+        left: 6.5rem;
         padding: 0.5rem 1rem;
         font-size: 1.5em;
     }
@@ -72,6 +72,7 @@
         left: 2rem;
         padding: 0.75rem;
         padding-bottom: 3.5rem;
+        width: 280px;
     }
 
     .home-container .car-details {

@@ -129,7 +129,7 @@ th, td {
 }
 
 .horizontal-divider {
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     margin: 1em 0;
 }
 
@@ -181,6 +181,18 @@ th, td {
     text-align: right;
     justify-content: flex-end;
     word-break: break-word;
+}
+
+.header-container .header-search {
+    grid-column: 4;
+    grid-row: 1;
+    width: 25px;
+    justify-self: self-end;
+}
+
+.header-container .header-search img {
+    width: 100%;
+    height: 100%;
 }
 
 nav.header-navigation {
@@ -241,6 +253,7 @@ nav.header-navigation ul li a.active, nav.header-navigation ul li a:hover {
     text-align: left;
     background-color: rgba(255, 255, 255, 0.80);
     padding: 0.5rem;
+    width: 240px;
 }
 
 .home-container .image-banner .banner-spotlight h2,
@@ -403,6 +416,11 @@ footer .footer-container {
     margin-bottom: 1rem;
 }
 
+.full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
 form {
     width: 100%;
     max-width: 450px;
@@ -439,6 +457,15 @@ fieldset legend {
 .btn-submit {
     background-color: var(--accent);
     float: right;
+}
+
+.btn-submit-secondary {
+    background-color: var(--border);
+    color: white;
+}
+
+.btn-large {
+    padding: .5rem 2rem;
 }
 
 .vehicle-management-container {
@@ -485,7 +512,7 @@ fieldset legend {
 }
 
 .classification-list {
-    padding: 0;
+    padding: 0 1rem;
     /*display: grid;
     grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 1rem;*/
@@ -502,17 +529,17 @@ fieldset legend {
     padding-bottom: 0.75em;
     border-radius: 9px;
     margin: 1em 0;
-    width: 175px;
+    width: 215px;
 }
 
 .classification-list li img {
     width: 100%;
-    height: 175px;
+    height: 150px;
     object-fit: fill;
     border-radius: 9px 9px 0 0;
 }
 
-.classification-list li h3 {
+.classification-list li h4 {
     margin: 0.5em 0;
     padding: 0 .5em;
     text-decoration: underline;
@@ -638,11 +665,17 @@ fieldset legend {
 
 #image-display li img {
     width: 100%;
-    height: 180px;
+    height: 125px;
     object-fit: fill;
     object-position: center center;
 }
 
 #image-display li p {
     word-break: break-word;
+}
+
+.search-form {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
 }
