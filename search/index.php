@@ -30,13 +30,13 @@ $defaultOffset = 0;
 
 switch ($action) {
     case 'q':
-        $query = filter_input(INPUT_GET, 'query', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $query = filter_input(INPUT_GET, 'query', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
         if (empty($query)) {
             $message = '<p class="alert-message alert-danger">You must provide a Search String.</p>';
             include '../view/search.php';
             exit;
         }
-        $query = removeHTMLfromStr($query);
+        #$query = removeHTMLfromStr($query);
         $querySplit = explode(' ', $query);
 
         $totalRecordsOfSearchResult = CountTotalRecordsInventoryByKeywords($querySplit);
