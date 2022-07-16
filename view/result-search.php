@@ -23,7 +23,8 @@
             <form method="GET" action="/phpmotors/search" class="full-width">
                 <input type="hidden" name="action" value="q" />
                 <div class="search-form">
-                    <input type="text" name="query" class="formInput" <?php if(isset($query)){ echo "value='$query'"; }?> />
+                    <label for="query">Make another search</label>
+                    <input type="text" id="query" name="query" class="formInput" <?php if(isset($query)){ echo "value='$query'"; }?> />
                     <button type="submit" class="btn btn-submit-secondary btn-large">Search</button>
                 </div>
             </form>

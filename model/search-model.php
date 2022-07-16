@@ -21,6 +21,7 @@ function CountTotalRecordsInventoryByKeywords($keywords) {
             OR CONVERT(invDescription USING utf8) LIKE '%$key%' 
             OR CONVERT(invPrice USING utf8) LIKE '%$key%'
             OR CONVERT(invColor USING utf8) LIKE '%$key%'
+            OR CONVERT(invYear USING utf8) LIKE '%$key%'
         ";
     }
     $sql.=")";
@@ -47,7 +48,7 @@ function filterInventoryByKeywords($keywords, $limit, $numpage) {
                 where im.invId = inventory.invId and im.imgPrimary = 1 and im.imgName like '%-tn%' 
                 order by im.imgId desc 
                 limit 1
-            )
+            ) as invThumbnailImage
         FROM inventory
         WHERE (
     ";
@@ -63,6 +64,7 @@ function filterInventoryByKeywords($keywords, $limit, $numpage) {
             OR CONVERT(invDescription USING utf8) LIKE '%$key%' 
             OR CONVERT(invPrice USING utf8) LIKE '%$key%'
             OR CONVERT(invColor USING utf8) LIKE '%$key%'
+            OR CONVERT(invYear USING utf8) LIKE '%$key%'
         ";
     }
     $sql.=") LIMIT $limit OFFSET $numpage";

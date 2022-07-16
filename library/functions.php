@@ -267,18 +267,24 @@ function removeHTMLfromStr($text, $htmlAllowed = ''){
 function displaySearchResult($searchResult){
     $display = "<ul class='searchContainer'>";
     foreach($searchResult as $r){
-        $display .= "<li class='searchItem'><a href=''>".$r["invYear"]." ".$r["invMake"]." ".$r["invModel"]."</a><p>".$r["invDescription"]."</p></li>";
+        $display .= "
+            <li class='searchItem'>
+                <img src='".$r["invThumbnailImage"]."' alt='thumbnail image of ".$r["invMake"]." ".$r["invModel"]."' />
+                <a href='/phpmotors/vehicles/?action=vehicleDetail&vehicleId=".$r["invId"]."'>".$r["invYear"]." ".$r["invMake"]." ".$r["invModel"]."</a>
+                <p>".$r["invDescription"]."</p>
+            </li>";
     }
     $display .= "</ul>";
     return $display;
 }
 
 function displaySearchNavigation($totalnumPages, $q, $activenumpage){
+    $qf = str_replace(" ","+",$q);
     $display = "<div class='paginator-container'><ul class='pagination'>";
     $previousNumber = $activenumpage-1;
     if($previousNumber > 0){
         $display .= "<li class='text-end'>
-            <a href='/phpmotors/search/?action=q&query=$q&p=$previousNumber'>
+            <a href='/phpmotors/search/?action=q&query=$qf&p=$previousNumber'>
                 <span class='paginationIcon'><</span><br/><span>Previous</span>
             </a>
         </li>";
@@ -288,14 +294,14 @@ function displaySearchNavigation($totalnumPages, $q, $activenumpage){
             $display .= "<li class='page active'>$num</li>";
         } else {
             $display .= "<li class='page'>
-                <a href='/phpmotors/search/?action=q&query=$q&p=$num'>$num</a>
+                <a href='/phpmotors/search/?action=q&query=$qf&p=$num'>$num</a>
             </li>";
         }
     }
     $nextNumber = $activenumpage+1;
     if($nextNumber <= $totalnumPages){
         $display .= "<li class='text-start'>
-            <a href='/phpmotors/search/?action=q&query=$q&p=$nextNumber'>
+            <a href='/phpmotors/search/?action=q&query=$qf&p=$nextNumber'>
                 <span class='paginationIcon'>></span><br/><span>Next</span>
             </a>
         </li>";

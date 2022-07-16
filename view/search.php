@@ -30,8 +30,8 @@
             <form method="GET" action="/phpmotors/search" class="full-width">
                 <input type="hidden" name="action" value="q" />
                 <div class="search-form">
-                    <label>What are you lookin for today?</label>
-                    <input type="text" name="query" class="formInput full-width" />
+                    <label for="query">What are you lookin for today?</label>
+                    <input type="text" id="query" name="query" class="formInput full-width" />
                     <button type="submit" class="btn btn-submit-secondary btn-large">Search</button>
                 </div>
             </form>
