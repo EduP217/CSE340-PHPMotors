@@ -27,17 +27,19 @@
                     <button type="submit" class="btn btn-submit-secondary btn-large">Search</button>
                 </div>
             </form>
-            <h1 class="heading-title">Returned <?php echo count($searchResult); ?> results for: <?php echo $query; ?></h1>
+            <h1 class="heading-title">Returned <?php echo $totalRecordsOfSearchResult; ?> results for: <?php echo $query; ?></h1>
             <?php
             if (isset($message)) {
                 echo $message;
             }
 
-            if (isset($vehicleDisplay)) {
-                echo $vehicleDisplay;
+            if (isset($displayResult)) {
+                echo $displayResult;
             }
 
-            print_r($filter);
+            if (isset($displayNavigation)) {
+                echo $displayNavigation;
+            }
             ?>
         </div>
     </main>
