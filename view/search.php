@@ -31,7 +31,7 @@
                 <input type="hidden" name="action" value="q" />
                 <div class="search-form">
                     <label for="query">What are you lookin for today?</label>
-                    <input type="text" id="query" name="query" class="formInput full-width" />
+                    <input type="text" id="query" name="query" class="formInput full-width" required />
                     <button type="submit" class="btn btn-submit-secondary btn-large">Search</button>
                 </div>
             </form>
